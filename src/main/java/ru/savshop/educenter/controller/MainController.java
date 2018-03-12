@@ -16,8 +16,4 @@ public class MainController  {
     public String login() {
         return "login";
     }
-    @RequestMapping (value = "/register", method = RequestMethod.GET)
-    public String register() {
-        return "register";
-    }
 }

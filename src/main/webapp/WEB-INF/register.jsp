@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Styopa
@@ -11,6 +12,15 @@
     <title>Register</title>
 </head>
 <body>
-Register
+<h2>Регистрация</h2>
+<spring:form action="/addUser" modelAttribute="student" method="post" enctype="multipart/form-data">
+    <div><spring:input path="name" placeholder="Ձեր անունը" type="text"/></div><br>
+    <div><spring:input path="surname" placeholder="Ձեր ազգանունը" type="text"/></div><br>
+    <div><spring:input path="email" placeholder="Ձեր Էլ. փոստի հասցեն" type="text"/></div><br>
+    <div><spring:input path="password" placeholder="Գաղտնաբառ" type="password" value=""/></div>
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="picture"/><br>
+    <input type="submit" value="Register">
+</spring:form>
 </body>
 </html>

@@ -32,6 +32,4 @@ public class User {
     private Type type;
     @Column (name = "picture")
     private String picUrl;
-    @Column(name = "lesson_id")
-    private Lesson lesson;
 }
