@@ -27,7 +27,5 @@ public class Lesson {
     private int duration;
     @Column (name = "lecturer_id")
     private int lectureID;
-    @Column (name = "user_id")
-    private int userID;
 
 }

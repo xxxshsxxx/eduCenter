@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Styopa
@@ -11,6 +12,36 @@
     <title>Admin</title>
 </head>
 <body>
-Admin
+
+Add Lecturer:<br>
+<spring:form action="/addLecturer" method="post" modelAttribute="addlecturer">
+
+    <spring:label path="name">Name:</spring:label>
+    <spring:input path="name"></spring:input>
+    ]<spring:label path="name">Surname:</spring:label>
+    <spring:input path="surname"></spring:input>
+    <input type="submit" value="ADD">
+
+</spring:form>
+
+Add Lesson:<br>
+<spring:form action="/addLesson" method="post" modelAttribute="addlesson">
+
+    <spring:label path="name">Name:</spring:label>
+    <spring:input path="name"></spring:input>
+    <spring:label path="name">Price:</spring:label>
+    <spring:input path="price"></spring:input>
+    <spring:label path="name">Duration:</spring:label>
+    <spring:input path="duration"></spring:input>
+    <spring:select path="lectureID" items="${allLecturer}" itemLabel="name"></spring:select>
+    <input type="submit" value="ADD">
+
+</spring:form>
+
+<%--<spring:form action="/deleteUser" method="post" modelAttribute="allUsers">--%>
+    <%--<spring:select path="" items="${allUsers}" itemLabel="name"></spring:select>--%>
+    <%--<input type="submit" value="Delete">--%>
+
+<%--</spring:form>--%>
 </body>
 </html>

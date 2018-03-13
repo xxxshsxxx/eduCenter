@@ -19,7 +19,6 @@ public class StudentLessons {
     private int studentId;
     @Column(name = "lesson_id")
     private int lessonId;
-
 }
 
 
