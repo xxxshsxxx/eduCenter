@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import ru.savshop.educenter.model.Lecturer;
 import ru.savshop.educenter.model.Lesson;
 import ru.savshop.educenter.repository.LecturerRepository;
@@ -46,10 +44,17 @@ public class ManagerController {
         return "redirect:/admin";
     }
 
-    @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
-    public String deleteUser(@ModelAttribute(name = "delete") Lesson lesson) {
-        CurrentUser curretUser = (CurrentUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        lessonRepository.delete(curretUser.getId());
-        return "redirect:/admin";
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
+    public String deletePage(ModelMap map) {
+        map.addAttribute("allUsers", userRepository.findAll());
+
+        return "deleteUser";
     }
+
+    @GetMapping ("/deleteUsers")
+    public String deleteUser(@RequestParam("id") int id) {
+        userRepository.delete(id);
+        return "redirect:/index";
+    }
+
 }

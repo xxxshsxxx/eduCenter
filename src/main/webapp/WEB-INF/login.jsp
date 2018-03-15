@@ -22,6 +22,5 @@
 </div><!--/login form-->
 <br>
 <br>
-<h4><a href="/register">Register</a> </h4>
 </body>
 </html>

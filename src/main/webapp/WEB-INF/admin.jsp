@@ -43,5 +43,9 @@ Add Lesson:<br>
     <%--<input type="submit" value="Delete">--%>
 
 <%--</spring:form>--%>
+
+<a href="/register">Register</a><br>
+<a href="/deleteUser">DeleteUsers</a><br>
+
 </body>
 </html>
