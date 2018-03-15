@@ -14,9 +14,8 @@
 <body>
 <ul>
     <c:forEach items="${allUsers}" var="user">
-        <li>${user.name}&nbsp;&nbsp;&nbsp;${user.surname}<br>
-            <img src="/product/image?fileName=${user.picUrl}" alt="picture" width="90"><br>
-            <a href="/deleteUsers?id = ${user.id}">&nbsp;Delete<hr></a>
+        <img src="/product/image?fileName=${user.picUrl}" alt="picture" width="90"><br>
+        <li>${user.name}${user.surname}<a href="/deleteUsers?id = ${user.id}">Delete<hr></a>
         </li>
     </c:forEach>
 </ul>

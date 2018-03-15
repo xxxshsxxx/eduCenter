@@ -51,10 +51,10 @@ public class ManagerController {
         return "deleteUser";
     }
 
-    @GetMapping ("/deleteUsers")
+    @RequestMapping(value = "/deleteUsers", method = RequestMethod.GET)
     public String deleteUser(@RequestParam("id") int id) {
         userRepository.delete(id);
-        return "redirect:/index";
+        return "redirect:/admin";
     }
 
 }
